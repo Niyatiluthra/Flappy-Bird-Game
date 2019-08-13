@@ -37,9 +37,10 @@ pipe[0] = {
 
 
 document.addEventListener("keydown",moveBird);
-function moveBird()
+
+function moveBird(e)
 {
-    by=by-20; 
+    by=by-20;
     fly.play();
 }
 
@@ -49,6 +50,8 @@ function draw(){
     
     for( var i = 0  ; i < pipe.length ; i++)
     {
+        constant = pipeN.height + 80;
+
         content.drawImage(pipeN,pipe[i].x,pipe[i].y);
         content.drawImage(pipeS,pipe[i].x,pipe[i].y + constant);
         pipe[i].x--;
